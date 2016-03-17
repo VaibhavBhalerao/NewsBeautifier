@@ -46,9 +46,7 @@ class HomeTableViewController: UITableViewController {
     
     func fetch(completion: () -> Void) {
         time = NSDate()
-        
-        print("yolo")
-        
+
         let feeds = FeedDAO.getAllFeeds() as! [Feed]
         for feed in feeds {
             let dwld = FetchArticleManager(feed: feed)
