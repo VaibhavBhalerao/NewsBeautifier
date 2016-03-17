@@ -1,0 +1,6 @@
+framework module Pods_NewsBeautifier {
+  umbrella header "Pods-NewsBeautifier-umbrella.h"
+
+  export *
+  module * { export * }
+}

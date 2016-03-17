@@ -1,0 +1,10 @@
+PODS:
+  - Feeder (0.1.0)
+
+DEPENDENCIES:
+  - Feeder (~> 0.1)
+
+SPEC CHECKSUMS:
+  Feeder: 478e04a3f517d612bcd3a294bea3bb4a968980fe
+
+COCOAPODS: 0.39.0

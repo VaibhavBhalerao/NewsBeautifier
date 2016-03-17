@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="Article" representedClassName=".Article" syncable="YES">
+        <attribute name="attrdescription" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="imagedata" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="imageurl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="read" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="feed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Feed" inverseName="articles" inverseEntity="Feed" syncable="YES"/>
+    </entity>
+    <entity name="Category" representedClassName=".Category" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="feeds" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Feed" inverseName="category" inverseEntity="Feed" syncable="YES"/>
+    </entity>
+    <entity name="Feed" representedClassName=".Feed" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="originurl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="summary" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tagurl" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="articles" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Article" inverseName="feed" inverseEntity="Article" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="feeds" inverseEntity="Category" syncable="YES"/>
+        <relationship name="subscribedFeed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SubscribedFeed" inverseName="feed" inverseEntity="SubscribedFeed" syncable="YES"/>
+    </entity>
+    <entity name="SubscribedFeed" representedClassName=".SubscribedFeed" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="feed" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Feed" inverseName="subscribedFeed" inverseEntity="Feed" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Article" positionX="189" positionY="-0" width="128" height="195"/>
+        <element name="Category" positionX="-279" positionY="60" width="128" height="73"/>
+        <element name="Feed" positionX="-54" positionY="9" width="128" height="150"/>
+        <element name="SubscribedFeed" positionX="-54" positionY="218" width="128" height="90"/>
+    </elements>
+</model>
